@@ -81,7 +81,7 @@ public class FatorDeVencimento{
 	 * 07/10/1997.
 	 * </p>
 	 */
-	private static final Date DATA_LIMITE_DO_FATOR_DE_VENCIMENTO = new GregorianCalendar(2025, Calendar.FEBRUARY, 21).getTime();
+	private static final Date DATA_LIMITE_DO_FATOR_DE_VENCIMENTO = new GregorianCalendar(2052, Calendar.JULY, 8).getTime();
 
 	/**
 	 * <p>

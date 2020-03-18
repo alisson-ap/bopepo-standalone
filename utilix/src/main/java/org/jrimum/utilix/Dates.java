@@ -154,6 +154,9 @@ public final class Dates {
 				fator *= -1;
 			}
 			
+			if (fator > 9999)
+				fator = fator - 9000;
+				
 		} else {
 			
 			Exceptions.throwIllegalArgumentException("A data inicial [" + dataInicial
