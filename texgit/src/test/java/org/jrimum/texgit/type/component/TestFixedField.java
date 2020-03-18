@@ -129,12 +129,12 @@ public class TestFixedField {
 		campoInteger.read("000001");
 		assertNotNull(campoInteger.getValue());
 		assertTrue(campoInteger.getValue() instanceof Integer);
-		assertTrue(new Integer(1).compareTo(campoInteger.getValue()) == 0);
+		assertTrue(Integer.valueOf(1).compareTo(campoInteger.getValue()) == 0);
 
 		campoLong.read("000001");
 		assertNotNull(campoLong.getValue());
 		assertTrue(campoLong.getValue() instanceof Long);
-		assertTrue(new Long(1L).compareTo(campoLong.getValue()) == 0);
+		assertTrue(Long.valueOf(1L).compareTo(campoLong.getValue()) == 0);
 
 		campoDecimal.read("00000087598");
 		assertNotNull(campoDecimal.getValue());

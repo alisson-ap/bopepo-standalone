@@ -219,7 +219,7 @@ public class TestFiller {
 		assertEquals(CAMPO, fillerString.fill(CAMPO, 0));
 		assertEquals(CAMPO, fillerString.fill(CAMPO, -TAMANHO));
 
-		fillerInteger = new Filler<Integer>(new Integer(TAMANHO),
+		fillerInteger = new Filler<Integer>(Integer.valueOf(TAMANHO),
 				Side.LEFT);
 		assertTrue(fillerInteger.getPadding() instanceof Integer);
 		assertEquals("10101" + CAMPO, fillerInteger.fill(CAMPO, TAMANHO));
@@ -231,7 +231,7 @@ public class TestFiller {
 		assertEquals(CAMPO, fillerInteger.fill(CAMPO, 0));
 		assertEquals(CAMPO, fillerInteger.fill(CAMPO, -TAMANHO));
 
-		fillerDouble = new Filler<Double>(new Double(10.9), Side.LEFT);
+		fillerDouble = new Filler<Double>(Double.valueOf(10.9), Side.LEFT);
 		assertTrue(fillerDouble.getPadding() instanceof Double);
 		assertEquals("10.91" + CAMPO, fillerDouble.fill(CAMPO, TAMANHO));
 		assertEquals(CAMPO, fillerDouble.fill(CAMPO, 0));

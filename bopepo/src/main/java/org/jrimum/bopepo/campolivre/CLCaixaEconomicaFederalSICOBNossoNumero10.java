@@ -180,6 +180,7 @@ class CLCaixaEconomicaFederalSICOBNossoNumero10 extends AbstractCLCaixaEconomica
 	 * @param codigoDaCarteira
 	 *            - Código da carteira
 	 */
+	@SuppressWarnings("unused")
 	private void checkPadraoNossoNumeroPorCodigoDaCarteira(String nossoNumero, Integer codigoDaCarteira){
 		switch (codigoDaCarteira) {
 		case 11:

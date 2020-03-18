@@ -132,7 +132,7 @@ abstract class AbstractCLItau extends AbstractCampoLivre {
 			digito = 0;
 		}
 		
-		return new Integer(digito);
+		return Integer.valueOf(digito);
 	}
 
 }

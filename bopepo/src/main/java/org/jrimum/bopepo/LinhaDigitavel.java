@@ -236,7 +236,7 @@ public class LinhaDigitavel extends BlockOfFields {
 		innerCampo1 = new FixedField<InnerCampo1>(new InnerCampo1(4,11),11);
 		innerCampo2 = new FixedField<InnerCampo2>(new InnerCampo2(2,12),12);
 		innerCampo3 = new FixedField<InnerCampo3>(new InnerCampo3(2,12),12);
-		campo4 = new FixedField<Integer>(new Integer(0),1);
+		campo4 = new FixedField<Integer>(Integer.valueOf(0),1);
 		innerCampo5 = new FixedField<InnerCampo5>(new InnerCampo5(2,14),14);
 		
 		add(innerCampo1);
