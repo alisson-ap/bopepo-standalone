@@ -1,0 +1,26 @@
+<!-- build with
+mvn verify -Didempiere.target=org.idempierelbr.p2.targetplatform
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    <properties>
+        <bopepo.version>0.2.3-DEV-SNAPSHOT</bopepo.version>
+        <domkee.version>0.2.3-DEV-SNAPSHOT</domkee.version>
+        <texgit.version>0.2.3-DEV-SNAPSHOT</texgit.version>
+        <utilix.version>0.2.3-DEV-SNAPSHOT</utilix.version>
+        <vallia.version>0.2.3-DEV-SNAPSHOT</vallia.version>
+    </properties>
+   	<name>JRimum BOPEPO</name>
+	<version>0.2.3-DEV-SNAPSHOT</version>
+	<groupId>org.kenos</groupId>
+	<artifactId>kenos-bopepo</artifactId>
+	<packaging>pom</packaging>
+	<modules>
+		<module>utilix</module>
+		<module>vallia</module>
+		<module>domkee</module>
+		<module>texgit</module>
+		<module>bopepo</module>
+	</modules>
+</project>
