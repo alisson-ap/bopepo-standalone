@@ -34,7 +34,8 @@ import static java.math.BigDecimal.ZERO;
 import static org.jrimum.domkee.financeiro.banco.febraban.Banco.isCodigoDeCompensacaoOK;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jrimum.bopepo.BancosSuportados;
 import org.jrimum.domkee.financeiro.banco.ParametroBancario;
 import org.jrimum.domkee.financeiro.banco.febraban.Titulo;
@@ -92,7 +93,7 @@ abstract class AbstractCampoLivre extends BlockOfFields implements CampoLivre {
 	/**
 	 * Looger.
 	 */
-	private static Logger log = Logger.getLogger(Objects.class);
+	private static Logger log = LogManager.getLogger(Objects.class);
 	
 	/**
 	 * Nosso número com 7 posições.

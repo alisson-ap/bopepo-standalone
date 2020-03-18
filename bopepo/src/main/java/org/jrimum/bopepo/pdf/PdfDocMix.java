@@ -46,7 +46,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.WeakHashMap;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jrimum.utilix.Collections;
 import org.jrimum.utilix.Exceptions;
 import org.jrimum.utilix.Objects;
@@ -71,7 +72,7 @@ import com.lowagie.text.pdf.PdfStamper;
  */
 public class PdfDocMix {
 
-	private static final Logger LOG = Logger.getLogger(PdfDocMix.class);
+	private static final Logger LOG = LogManager.getLogger(PdfDocMix.class);
 	
 	private PdfReader reader;
 	private PdfStamper stamper;

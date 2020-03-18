@@ -38,7 +38,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jrimum.bopepo.campolivre.CampoLivre;
 import org.jrimum.bopepo.campolivre.CampoLivreFactory;
 import org.jrimum.bopepo.campolivre.NotSupportedBancoException;
@@ -72,7 +73,7 @@ import org.jrimum.utilix.Objects;
  */
 public class Boleto {
 	
-	private static Logger log = Logger.getLogger(Boleto.class);
+	private static Logger log = LogManager.getLogger(Boleto.class);
 
 	/**
 	 * @see Titulo

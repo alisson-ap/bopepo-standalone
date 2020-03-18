@@ -30,20 +30,22 @@
 
 package org.jrimum.bopepo.view;
 
-import static org.jrimum.utilix.Objects.isNull;
 import static org.jrimum.utilix.Objects.isNotNull;
+import static org.jrimum.utilix.Objects.isNull;
 import static org.jrimum.utilix.text.DateFormat.DDMMYYYY_B;
 import static org.jrimum.utilix.text.DecimalFormat.MONEY_DD_BR;
 
 import java.awt.Image;
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jrimum.bopepo.BancosSuportados;
 import org.jrimum.bopepo.Boleto;
 import org.jrimum.domkee.comum.pessoa.endereco.Endereco;
@@ -51,6 +53,8 @@ import org.jrimum.domkee.financeiro.banco.febraban.Carteira;
 import org.jrimum.domkee.financeiro.banco.febraban.ContaBancaria;
 import org.jrimum.domkee.financeiro.banco.febraban.Sacado;
 import org.jrimum.domkee.financeiro.banco.febraban.SacadorAvalista;
+
+import com.lowagie.text.DocumentException;
 
 /**
  * <p>
@@ -64,7 +68,7 @@ import org.jrimum.domkee.financeiro.banco.febraban.SacadorAvalista;
  * @version 0.3
  */
 public abstract class AbstractViewer {
-	private static Logger log = Logger.getLogger(AbstractViewer.class);
+	private static Logger log = LogManager.getLogger(AbstractViewer.class);
 	
 	private static final String	HIFEN_SEPERADOR	= "-";
 	protected Boleto			boleto;

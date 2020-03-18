@@ -38,7 +38,8 @@ import java.io.InputStream;
 import java.net.URL;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jrimum.bopepo.Boleto;
 import org.jrimum.bopepo.pdf.Files;
 import org.jrimum.bopepo.pdf.PdfDocMix;
@@ -60,7 +61,7 @@ import org.jrimum.utilix.Exceptions;
  */
 class PdfViewer {
 
-	private static Logger log = Logger.getLogger(PdfViewer.class);
+	private static Logger log = LogManager.getLogger(PdfViewer.class);
 
 	private final ResourceBundle resourceBundle;
 

@@ -34,7 +34,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jrimum.bopepo.campolivre.CampoLivre;
 import org.jrimum.domkee.financeiro.banco.febraban.ContaBancaria;
 import org.jrimum.domkee.financeiro.banco.febraban.Titulo;
@@ -119,7 +120,7 @@ public class CodigoDeBarras extends BlockOfFields{
 	 */
 	private static final long serialVersionUID = 748913164143978133L;
 	
-	private static Logger log = Logger.getLogger(CodigoDeBarras.class);
+	private static Logger log = LogManager.getLogger(CodigoDeBarras.class);
 	
 	/**
 	 * 

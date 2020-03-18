@@ -36,7 +36,8 @@ import java.util.Collection;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jrimum.domkee.comum.pessoa.contato.NumeroDeTelefone;
 import org.jrimum.domkee.comum.pessoa.endereco.Endereco;
 import org.jrimum.domkee.comum.pessoa.id.cprf.CNPJ;
@@ -61,7 +62,7 @@ import org.jrimum.domkee.financeiro.banco.PessoaJuridica;
 	
 public class Banco implements org.jrimum.domkee.financeiro.banco.Banco {
 	
-	private static Logger log = Logger.getLogger(Banco.class);
+	private static Logger log = LogManager.getLogger(Banco.class);
 
 	private CodigoDeCompensacaoBACEN codigoDeCompensacaoBACEN;
 
