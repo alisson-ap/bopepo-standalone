@@ -52,6 +52,7 @@ import java.util.Date;
 import org.jrimum.bopepo.Boleto;
 import org.jrimum.bopepo.pdf.CodigoDeBarras;
 import org.jrimum.bopepo.view.ResourceBundle;
+import org.jrimum.domkee.comum.pessoa.endereco.Endereco;
 import org.jrimum.utilix.Exceptions;
 import org.jrimum.utilix.Objects;
 
@@ -63,7 +64,7 @@ public abstract class AbstractBoletoInfoCampoView implements BoletoInfoCampoView
 	
 	private final ResourceBundle resourceBundle;
 	
-	private final Boleto boleto;
+	protected final Boleto boleto;
 	
 	/**
 	 * Modo de instanciação não permitido.
@@ -339,5 +340,40 @@ public abstract class AbstractBoletoInfoCampoView implements BoletoInfoCampoView
 			return value.name();
 		}
 		return EMPTY;
+	}
+	
+	protected void setEndereco(Endereco endereco, String campoEndereco1, String campoEndereco2, StringBuilder sb) {
+
+		if (isNotNull(endereco)) {
+
+			if (isNotNull(endereco.getLogradouro())) {
+				sb.append(endereco.getLogradouro());
+			}
+
+			if (isNotNull(endereco.getNumero())) {
+				sb.append(", n°: ");
+				sb.append(endereco.getNumero());
+			}
+
+			if (isNotNull(endereco.getCEP())) {
+				sb.append(" - CEP: ");
+				sb.append(endereco.getCEP().getCep());
+			}
+			
+			if (isNotNull(endereco.getBairro())) {
+				sb.append(" - ");
+				sb.append(endereco.getBairro());
+			}
+
+			if (isNotNull(endereco.getLocalidade())) {
+				sb.append(" - ");
+				sb.append(endereco.getLocalidade());
+			}
+
+			if (isNotNull(endereco.getUF())) {
+				sb.append(" / ");
+				sb.append(endereco.getUF().getNome());
+			}
+		}
 	}
 }

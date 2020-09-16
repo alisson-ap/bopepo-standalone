@@ -48,6 +48,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jrimum.bopepo.BancosSuportados;
 import org.jrimum.bopepo.Boleto;
+import org.jrimum.bopepo.view.info.campo.BoletoInfoCampoView;
+import org.jrimum.bopepo.view.info.campo.BoletoInfoCampoViewFactory;
 import org.jrimum.domkee.comum.pessoa.endereco.Endereco;
 import org.jrimum.domkee.financeiro.banco.febraban.Carteira;
 import org.jrimum.domkee.financeiro.banco.febraban.ContaBancaria;
@@ -398,6 +400,7 @@ public abstract class AbstractViewer {
 		{
 			Endereco endereco = boleto.getTitulo().getCedente().getEnderecos().iterator().next();
 
+			setEndereco(endereco, "txtRsEndCedente", "txtRsEndCedente", new StringBuilder());
 			setEndereco(endereco, "txtFcEndCedente", "txtFcEndCedente", new StringBuilder());
 		}
 	}
@@ -518,8 +521,13 @@ public abstract class AbstractViewer {
 			sb.append(HIFEN_SEPERADOR + boleto.getTitulo().getDigitoDoNossoNumero());
 		}
 
-		setText("txtRsNossoNumero", sb.toString());
-		setText("txtFcNossoNumero", sb.toString());
+		BoletoInfoCampoView campoView = BoletoInfoCampoViewFactory.create(new ResourceBundle(), boleto);
+		
+		String rsNN = campoView.getTextoRsNossoNumero();
+		String fcNN = campoView.getTextoFcNossoNumero();
+
+		setText("txtRsNossoNumero", rsNN != null ? rsNN : sb.toString());
+		setText("txtFcNossoNumero", fcNN != null ? fcNN : sb.toString());
 	}
 
 	/**
