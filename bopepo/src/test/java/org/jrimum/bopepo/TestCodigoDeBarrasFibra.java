@@ -103,7 +103,7 @@ public class TestCodigoDeBarrasFibra{
 		contaBancaria.setNumeroDaConta(numeroDaConta);
 
 		titulo = new Titulo(contaBancaria, sacado, cedente);
-		titulo.setNossoNumero("12345678901");
+		titulo.setNossoNumero("1234567890");
 		titulo.setDigitoDoNossoNumero("1");
 		titulo.setTipoDeMoeda(TipoDeMoeda.REAL);
 		titulo.setValor(BigDecimal.valueOf(100.23));

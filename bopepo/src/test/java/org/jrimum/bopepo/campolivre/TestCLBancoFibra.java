@@ -61,7 +61,8 @@ public class TestCLBancoFibra extends AbstractCampoLivreBaseTest<CLBancoFibra> {
 		titulo.getContaBancaria().setNumeroDaConta(new NumeroDaConta(16324));
 		titulo.getContaBancaria().setCarteira(new Carteira (32));
 		titulo.setNumeroDoDocumento("1234567890123");
-		titulo.setNossoNumero("12345678901");
+		titulo.setNossoNumero("1234567890");
+		titulo.setDigitoDoNossoNumero("1");
 		
 		createCampoLivreToTest();
 		

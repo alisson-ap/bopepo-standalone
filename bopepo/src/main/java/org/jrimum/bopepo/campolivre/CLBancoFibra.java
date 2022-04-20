@@ -110,7 +110,7 @@ class CLBancoFibra extends AbstractCLBancoFibra {
 	/**
 	 * Número de campos = 5.
 	 */
-	private static final Integer FIELDS_LENGTH = Integer.valueOf(4);
+	private static final Integer FIELDS_LENGTH = Integer.valueOf(5);
 
 	/**
 	 * Tamanho do campo Agência = 4. 
@@ -123,9 +123,14 @@ class CLBancoFibra extends AbstractCLBancoFibra {
 	private static final Integer CARTEIRA_LENGTH = Integer.valueOf(3);
 	
 	/**
-	 * Tamanho do campo Nosso Número = 11. 
+	 * Tamanho do campo Nosso Número = 10. 
 	 */
-	private static final Integer NOSSO_NUMERO_LENGTH = Integer.valueOf(11);
+	private static final Integer NOSSO_NUMERO_LENGTH = Integer.valueOf(10);
+	
+	/**
+	 * Tamanho do campo Dígito Verificador do Nosso Número = 1. 
+	 */
+	private static final Integer DV_NOSSO_NUMERO_LENGTH = Integer.valueOf(1);
 	
 	/**
 	 * Tamanho do campo Conta = 7. 
@@ -157,7 +162,8 @@ class CLBancoFibra extends AbstractCLBancoFibra {
 		checkCodigoDaCarteira(titulo);
 		checkCodigoDaCarteiraMenorOuIgualQue(titulo, 999);
 		checkNossoNumero(titulo);
-		checkTamanhoDoNossoNumero(titulo, NN11);
+		checkTamanhoDoNossoNumero(titulo, NN10);
+		checkTamanhoDigitoDoNossoNumero(titulo, 1);
 		checkNumeroDaContaNotNull(titulo);
 		checkCodigoDoNumeroDaConta(titulo);
 		checkCodigoDoNumeroDaContaMenorOuIgualQue(titulo, 9999999);
@@ -175,5 +181,6 @@ class CLBancoFibra extends AbstractCLBancoFibra {
 		this.add(new FixedField<Integer>(titulo.getContaBancaria().getCarteira().getCodigo(), CARTEIRA_LENGTH, Fillers.ZERO_LEFT));
 		this.add(new FixedField<Integer>(titulo.getContaBancaria().getNumeroDaConta().getCodigoDaConta(), CONTA_LENGTH, Fillers.ZERO_LEFT));
 		this.add(new FixedField<String>(titulo.getNossoNumero(), NOSSO_NUMERO_LENGTH, Fillers.ZERO_LEFT));
+		this.add(new FixedField<String>(titulo.getDigitoDoNossoNumero(), DV_NOSSO_NUMERO_LENGTH, Fillers.ZERO_LEFT));
 	}
 }

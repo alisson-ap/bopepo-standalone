@@ -77,8 +77,7 @@ public class BoletoInfoViewBancoFibra extends AbstractBoletoInfoCampoView{
 		return leftPad(carteira.getCodigo().toString(), 2, "0") 
 				+ "/" 
 				+ getBoleto().getTitulo().getNossoNumero() 
-				//+ "-" + getBoleto().getTitulo().getDigitoDoNossoNumero()
-				;
+				+ "-" + getBoleto().getTitulo().getDigitoDoNossoNumero();
 	}
 	
 	@Override
