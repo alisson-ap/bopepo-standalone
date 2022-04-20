@@ -155,7 +155,7 @@ class CLBancoFibra extends AbstractCLBancoFibra {
 		checkCodigoDaAgenciaMenorOuIgualQue(titulo, 9999);
 		checkCarteiraNotNull(titulo);
 		checkCodigoDaCarteira(titulo);
-		checkCodigoDaCarteiraMenorOuIgualQue(titulo, 99);
+		checkCodigoDaCarteiraMenorOuIgualQue(titulo, 999);
 		checkNossoNumero(titulo);
 		checkTamanhoDoNossoNumero(titulo, NN11);
 		checkNumeroDaContaNotNull(titulo);

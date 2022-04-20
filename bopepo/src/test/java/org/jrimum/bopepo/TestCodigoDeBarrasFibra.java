@@ -93,7 +93,7 @@ public class TestCodigoDeBarrasFibra{
 		Agencia agencia = new Agencia(1234, "1");
 		contaBancaria.setAgencia(agencia);
 		
-		Carteira carteira = new Carteira(5);
+		Carteira carteira = new Carteira(101);
 		carteira.setTipoCobranca(TipoDeCobranca.COM_REGISTRO);
 		
 		contaBancaria.setCarteira(carteira);
@@ -134,7 +134,7 @@ public class TestCodigoDeBarrasFibra{
 	@Test
 	public void testWrite() {
 		
-		assertEquals("22491100000000100231234005000678912345678901", codigoDeBarras.write());
+		assertEquals("22491100000000100231234101000678912345678901", codigoDeBarras.write());
 		
 	}
 
@@ -145,7 +145,7 @@ public class TestCodigoDeBarrasFibra{
 	@Test
 	public void testLinhaDigitavel() {
 		
-		assertEquals("22491.23403 05000.678911 23456.789017 1 10000000010023", linhaDigitavel.write());
+		assertEquals("22491.23411 01000.678910 23456.789017 1 10000000010023", linhaDigitavel.write());
 		
 	}
 
