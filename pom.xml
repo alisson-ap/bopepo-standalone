@@ -5,11 +5,11 @@ mvn verify -Didempiere.target=org.idempierelbr.p2.targetplatform
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
     <properties>
-        <bopepo.version>0.4.0</bopepo.version>
-        <domkee.version>0.4.0</domkee.version>
-        <texgit.version>0.4.0</texgit.version>
-        <utilix.version>0.4.0</utilix.version>
-        <vallia.version>0.4.0</vallia.version>
+        <bopepo.version>0.4.3</bopepo.version>
+        <domkee.version>0.4.3</domkee.version>
+        <texgit.version>0.4.3</texgit.version>
+        <utilix.version>0.4.3</utilix.version>
+        <vallia.version>0.4.3</vallia.version>
     </properties>
    	<name>JRimum BOPEPO</name>
 	<version>0.4.3</version>
