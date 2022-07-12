@@ -143,11 +143,21 @@ class CLCaixaEconomicaFederalSIGCB extends AbstractCLCaixaEconomicaFederal {
 
 		ContaBancaria conta = titulo.getContaBancaria();
 		String nossoNumero = titulo.getNossoNumero();
+		
+		
+		if(conta.getNumeroDaConta().getCodigoDaConta()<=999999) {
+			Integer dVCodigoDoCedente = calculeDigitoVerificador(conta.getNumeroDaConta().getCodigoDaConta().toString());
 
-		Integer dVCodigoDoCedente = calculeDigitoVerificador(conta.getNumeroDaConta().getCodigoDaConta().toString());
-
-		this.add(new FixedField<Integer>(conta.getNumeroDaConta().getCodigoDaConta(), 6, Fillers.ZERO_LEFT));
-		this.add(new FixedField<Integer>(dVCodigoDoCedente, 1));
+			this.add(new FixedField<Integer>(conta.getNumeroDaConta().getCodigoDaConta(), 6, Fillers.ZERO_LEFT));
+			this.add(new FixedField<Integer>(dVCodigoDoCedente, 1));
+		}else { 
+			// Para contas com 7 dígitos //
+			String contaSeteDigitos = conta.getNumeroDaConta().getCodigoDaConta().toString();
+			
+			this.add(new FixedField<Integer>(Integer.valueOf(contaSeteDigitos.substring(0,6)), 6));
+			this.add(new FixedField<Integer>(Integer.valueOf(contaSeteDigitos.substring(6)),1));	
+						
+		}
 		this.add(new FixedField<String>(nossoNumero.substring(0, 3), 3));
 		
 		if(conta.getCarteira().isComRegistro()){
